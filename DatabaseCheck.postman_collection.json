@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "3f5dcb11-8ccb-4320-beec-43702d12f9a4",
+		"name": "DatabaseCheck",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Persons Data Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8e2f6445-e11e-40dc-90c9-d288e10a76f3",
+						"exec": [
+							"pm.test(\"Status code of the query is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/createpersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"createpersons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the content of Persons Data Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20a5cd0a-e18c-483d-96d4-7bd2536dc72e",
+						"exec": [
+							"pm.test(\"Status code of the query is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getpersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getpersons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Populate Persons Data Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbe1c21d-ad75-4b22-b227-14f65d54dc0c",
+						"exec": [
+							"pm.test(\"Status code of the query is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/populatepersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"populatepersons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the content of Persons Data Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6b3db70-afce-4d09-8eda-d38bc057f234",
+						"exec": [
+							"pm.test(\"Status code of the query is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getpersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getpersons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Fist Names from the Persons Data Base",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getpersons/FirstName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getpersons",
+						"FirstName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Last Names from the Persons Data Base",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getpersons/LastName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getpersons",
+						"LastName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Addresses from the Persons Data Base",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getpersons/Address",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getpersons",
+						"Address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cities from the Persons Data Base",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getpersons/City",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getpersons",
+						"City"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete person  from the Persons Data Base where City is Szatymaz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/deletepersons/City=Szatymaz/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"deletepersons",
+						"City=Szatymaz",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the content of Persons Data Table",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getpersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getpersons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the FirstName to Joci where City is Budapest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "862f0930-8375-4623-b281-8fa93235f208",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/updateperson/FirstName=Joci&City=Budapest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"updateperson",
+						"FirstName=Joci&City=Budapest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the content of Persons Data Table",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/getpersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getpersons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the whole Persons Data Table",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/deletepersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"deletepersons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
