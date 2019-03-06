@@ -13,9 +13,29 @@
 					"script": {
 						"id": "8e2f6445-e11e-40dc-90c9-d288e10a76f3",
 						"exec": [
-							"pm.test(\"Status code of the query is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
+							"//Schema for DB validation",
+							"const schema = ",
+							"",
+							"{",
+							"    \"fieldCount\": 0,",
+							"    \"affectedRows\": 0,",
+							"    \"insertId\": 0,",
+							"    \"serverStatus\": 2,",
+							"    \"warningCount\": 0,",
+							"    \"message\": \"\",",
+							"    \"protocol41\": true,",
+							"    \"changedRows\": 0",
+							"};",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})",
+							"",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -48,11 +68,26 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "20a5cd0a-e18c-483d-96d4-7bd2536dc72e",
+						"id": "57fff5e3-206e-4f90-b5ce-e3487cccdc1d",
 						"exec": [
-							"pm.test(\"Status code of the query is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
+							"//Schema for DB validation",
+							"const schema = ",
+							"   [];",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -87,9 +122,33 @@
 					"script": {
 						"id": "cbe1c21d-ad75-4b22-b227-14f65d54dc0c",
 						"exec": [
-							"pm.test(\"Status code of the query is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
+							"//Schema for DB validation",
+							"const schema = ",
+							"   {",
+							"    \"fieldCount\": 0,",
+							"    \"affectedRows\": 3,",
+							"    \"insertId\": 0,",
+							"    \"serverStatus\": 2,",
+							"    \"warningCount\": 0,",
+							"    \"message\": \"&Records: 3  Duplicates: 0  Warnings: 0\",",
+							"    \"protocol41\": true,",
+							"    \"changedRows\": 0",
+							"};",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -122,12 +181,58 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f6b3db70-afce-4d09-8eda-d38bc057f234",
+						"id": "e71eed5d-2411-4491-bfad-e894021177b3",
 						"exec": [
-							"pm.test(\"Status code of the query is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
+							"//Schema for DB validation",
+							"const schema = ",
 							"",
+							"    [",
+							"    {",
+							"        \"PersonID\": 1,",
+							"        \"LastName\": \"Kiss\",",
+							"        \"FirstName\": \"Istvan\",",
+							"        \"Address\": \"1108 Harmat utca 34\",",
+							"        \"City\": \"Budapest\"",
+							"    },",
+							"    {",
+							"        \"PersonID\": 2,",
+							"        \"LastName\": \"Nagy\",",
+							"        \"FirstName\": \"Maria\",",
+							"        \"Address\": \"1068 Wesselenyi utca 12\",",
+							"        \"City\": \"Budapest\"",
+							"    },",
+							"    {",
+							"        \"PersonID\": 3,",
+							"        \"LastName\": \"Toth\",",
+							"        \"FirstName\": \"Otto\",",
+							"        \"Address\": \"1108 Fo utca 5\",",
+							"        \"City\": \"Szatymaz\"",
+							"    }",
+							"];",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "90d55f1b-be66-4c08-9473-b2022488d098",
+						"exec": [
 							""
 						],
 						"type": "text/javascript"
@@ -157,6 +262,39 @@
 		},
 		{
 			"name": "Get Fist Names from the Persons Data Base",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b715b3ce-c898-4a60-ba33-5070207bb838",
+						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"",
+							"    [",
+							"    {",
+							"        \"FirstName\": \"Istvan\"",
+							"    },",
+							"    {",
+							"        \"FirstName\": \"Maria\"",
+							"    },",
+							"    {",
+							"        \"FirstName\": \"Otto\"",
+							"    }",
+							"];",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -181,6 +319,39 @@
 		},
 		{
 			"name": "Get Last Names from the Persons Data Base",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b70c8d8b-1d36-4480-8205-fd7c1bd17b5e",
+						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"",
+							"[",
+							"    {",
+							"        \"LastName\": \"Kiss\"",
+							"    },",
+							"    {",
+							"        \"LastName\": \"Nagy\"",
+							"    },",
+							"    {",
+							"        \"LastName\": \"Toth\"",
+							"    }",
+							"];",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -205,6 +376,39 @@
 		},
 		{
 			"name": "Get Addresses from the Persons Data Base",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "08006acd-3508-4e53-93f0-f34664f1d1d5",
+						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"",
+							"[",
+							"    {",
+							"        \"Address\": \"1108 Harmat utca 34\"",
+							"    },",
+							"    {",
+							"        \"Address\": \"1068 Wesselenyi utca 12\"",
+							"    },",
+							"    {",
+							"        \"Address\": \"1108 Fo utca 5\"",
+							"    }",
+							"];",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -229,6 +433,39 @@
 		},
 		{
 			"name": "Get Cities from the Persons Data Base",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4b7e7a9-84c2-4d2f-a7b4-8060b09a0958",
+						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"",
+							"[",
+							"    {",
+							"        \"City\": \"Budapest\"",
+							"    },",
+							"    {",
+							"        \"City\": \"Budapest\"",
+							"    },",
+							"    {",
+							"        \"City\": \"Szatymaz\"",
+							"    }",
+							"];",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -253,6 +490,44 @@
 		},
 		{
 			"name": "Delete person  from the Persons Data Base where City is Szatymaz",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e035903-c0d7-49cf-ad6a-c12fb44fcfba",
+						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"{",
+							"    \"fieldCount\": 0,",
+							"    \"affectedRows\": 1,",
+							"    \"insertId\": 0,",
+							"    \"serverStatus\": 34,",
+							"    \"warningCount\": 0,",
+							"    \"message\": \"\",",
+							"    \"protocol41\": true,",
+							"    \"changedRows\": 0",
+							"};",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -278,6 +553,44 @@
 		},
 		{
 			"name": "Get the content of Persons Data Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73b4a242-4d2b-48a4-867f-f1648b1f6394",
+						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"",
+							"[",
+							"    {",
+							"        \"PersonID\": 1,",
+							"        \"LastName\": \"Kiss\",",
+							"        \"FirstName\": \"Istvan\",",
+							"        \"Address\": \"1108 Harmat utca 34\",",
+							"        \"City\": \"Budapest\"",
+							"    },",
+							"    {",
+							"        \"PersonID\": 2,",
+							"        \"LastName\": \"Nagy\",",
+							"        \"FirstName\": \"Maria\",",
+							"        \"Address\": \"1068 Wesselenyi utca 12\",",
+							"        \"City\": \"Budapest\"",
+							"    }",
+							"];",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -307,6 +620,33 @@
 					"script": {
 						"id": "862f0930-8375-4623-b281-8fa93235f208",
 						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"{",
+							"    \"fieldCount\": 0,",
+							"    \"affectedRows\": 2,",
+							"    \"insertId\": 0,",
+							"    \"serverStatus\": 34,",
+							"    \"warningCount\": 0,",
+							"    \"message\": \"(Rows matched: 2  Changed: 2  Warnings: 0\",",
+							"    \"protocol41\": true,",
+							"    \"changedRows\": 2",
+							"}",
+							";",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
 							""
 						],
 						"type": "text/javascript"
@@ -337,6 +677,44 @@
 		},
 		{
 			"name": "Get the content of Persons Data Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7b6abf7f-976c-4e71-9f22-64a705490293",
+						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"",
+							"[",
+							"    {",
+							"        \"PersonID\": 1,",
+							"        \"LastName\": \"Kiss\",",
+							"        \"FirstName\": \"Joci\",",
+							"        \"Address\": \"1108 Harmat utca 34\",",
+							"        \"City\": \"Budapest\"",
+							"    },",
+							"    {",
+							"        \"PersonID\": 2,",
+							"        \"LastName\": \"Nagy\",",
+							"        \"FirstName\": \"Joci\",",
+							"        \"Address\": \"1068 Wesselenyi utca 12\",",
+							"        \"City\": \"Budapest\"",
+							"    }",
+							"];",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -360,6 +738,38 @@
 		},
 		{
 			"name": "Delete the whole Persons Data Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "37868bab-f2b5-4ab5-acba-e863971405f8",
+						"exec": [
+							"//Schema for DB validation",
+							"const schema = ",
+							"",
+							"{",
+							"    \"fieldCount\": 0,",
+							"    \"affectedRows\": 0,",
+							"    \"insertId\": 0,",
+							"    \"serverStatus\": 2,",
+							"    \"warningCount\": 0,",
+							"    \"message\": \"\",",
+							"    \"protocol41\": true,",
+							"    \"changedRows\": 0",
+							"};",
+							"",
+							"",
+							"",
+							"//Validate Schema",
+							"pm.test('JSON Schema Validation', function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(JSON.stringify(jsonData)).to.equal(JSON.stringify(schema));",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
